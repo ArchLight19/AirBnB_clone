@@ -1,119 +1,174 @@
-# AirBnB_clone
-AirBnB Clone - The Console
-air bnb clone
-![image](https://user-images.githubusercontent.com/65264591/218234970-e7ed018c-6d0e-4c21-b5e1-17f1ababab46.png)
+# The AirBnB Clone Project
+![AirBnB Logo](https://www.pngitem.com/pimgs/m/132-1322125_transparent-background-airbnb-logo-hd-png-download.png)
 
-Table of Contents
-Description
-Purpose
-Requirements
-File Structure
-Usage Examples
-Bugs
-Authors
-License
-Description
-![image](https://user-images.githubusercontent.com/65264591/218234987-3810ab1a-8ef1-4bbe-a523-da8ed482a846.png)
+## Project Description
+This is the first part of the AirBnB clone project where we worked on the backend of the project whiles interfacing it with a console application with the help of the cmd module in python.
+
+Data (python objects) generated are stored in a json file and can be accessed with the help of the json module in python
+
+## Description of the command interpreter:
+The interface of the application is just like the Bash shell except that this has a limited number of accepted commands that were solely defined for the purposes of the usage of the AirBnB website.
+
+This command line interpreter  serves as the frontend of the web app where users can interact with the backend which was developed with python OOP programming.
+
+Some of the commands available are:
+- show
+- create
+- update
+- destroy
+- count
+
+And as part of the implementation of the command line interpreter coupled with the backend and file storage system, the folowing actions can be performed:
+-   Creating new objects (ex: a new User or a new Place)
+-   Retrieving an object from a file, a database etc…
+-   Doing operations on objects (count, compute stats, etc…)
+-   Updating attributes of an object
+-   Destroying an object
+
+## How to start it
+These instructions will get you a copy of the project up and running on your local machine (Linux distro) for development and testing purposes.
+
+## Installing
+
+You will need to clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
+
+```
+git clone https://github.com/jzamora5/AirBnB_clone.git
+```
+After cloning the repository you will have a folder called AirBnB_clone. In here there will be several files that allow the program to work.
+
+> /console.py : The main executable of the project, the command interpreter.
+>
+> models/engine/file_storage.py: Class that serializes instances to a JSON file and deserializes JSON file to instances
+> 
+> models/__ init __.py:  A unique `FileStorage` instance for the application
+> 
+> models/base_model.py: Class that defines all common attributes/methods for other classes.
+> 
+> models/user.py: User class that inherits from BaseModel
+> 
+>models/state.py: State class that inherits from BaseModel
+>
+>models/city.py: City class that inherits from BaseModel
+>
+>models/amenity.py: Amenity class that inherits from BaseModel
+>
+>models/place.py: Place class that inherits from BaseModel
+>
+>models/review.py: Review class that inherits from BaseModel
 
 
-Purpose
-The purpose of this project is to understand how to:
 
-create a Python package
-create a command interpreter using the cmd module
-serialize and deserialize a Class
-write and read a JSON file
-manage datetime
-use *args and **kwargs
-handle named arguments in a function
-HTML and CSS concepts
-Now that you have a command interpreter for managing your AirBnB objects, it’s time to make them alive!
+## How to use it
+It can work in two different modes:
 
-Before developing a big and complex web application, we will build the front end step-by-step.
 
-The first step is to “design” / “sketch” / “prototype” each element:
+**Interactive** and **Non-interactive**.
 
-Create simple HTML static pages
-Style guide
-Fake contents
-No Javascript
-No data loaded from anything
-During this project, you will learn how to manipulate HTML and CSS languages. HTML is the structure of your page, it should be the first thing to write. CSS is the styling of your page, the design. I really encourage you to fix your HTML part before starting the styling. Indeed, without any structure, you can’t apply any design.
+In **Interactive mode**, the console will display a prompt (hbnb) indicating that the user can write and execute a command. After the command is run, the prompt will appear again a wait for a new command. This can go indefinitely as long as the user does not exit the program.
 
-Learning Objectives
-What is HTML
-How to create an HTML page
-What is a markup language
-What is the DOM
-What is an element / tag
-What is an attribute
-How does the browser load a webpage
-What is CSS
-How to add style to an element
-What is a class
-What is a selector
-How to compute CSS Specificity Value
-What are Box properties in CSS
-Requirements
-PYTHON SCRIPT REQUIREMENTS
-allowed editors: vi, vim, emacs
-the first line of all files should be exactly #!/usr/bin/python3
-all code should use the PEP8 style (version 1.7.*)
-all files must be executable
-all files will be interpreted/compiled on Ubuntu 14.04 LTS using python3 (version 3.4.3)
-PYTHON TEST CASE REQUIREMENTS
-all test files should be in the folder tests
-all test files should be text files (extension: .txt)
-all test files should be executed using the command python3 -m doctest ./tests/*
-all modules should have documentation python3 -c 'print(__import__("my_module").__doc__)'
-all functions (inside and outside of classes) should have documentation python3 -c 'print(__import__("my_module").my_funct\ ion.__doc__)'
-General
-Allowed editors: vi, vim, emacs
-All your files should end with a new line
-A README.md file, at the root of the folder of the project, is mandatory
-Your code should be W3C compliant and validate with W3C-Validator
-All your CSS files should be in styles folder
-All your images should be in images folder
-You are not allowed to use !important and id (#... in the CSS file)
-You are not allowed to use tags img, embed and iframe
-You are not allowed to use Javascript
-Current screenshots have been done on Chrome 56 or more.
-No cross browsers
-You have to follow all requirements but some margin/padding are missing - you should try to fit as much as you can to screenshots
-Usage Examples for console
-Interactive Mode
-~/me$ ./console.py
+```
+$ ./console.py
 (hbnb) help
 
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb)
-(hbnb)
+(hbnb) 
+(hbnb) 
 (hbnb) quit
-~/me$
-Non-Interactive Mode
-~/me$ echo "help" | ./console.py
+$
+```
+
+In **Non-interactive mode**, the shell will need to be run with a command input piped into its execution so that the command is run as soon as the Shell starts. In this mode no prompt will appear, and no further input will be expected from the user.
+
+
+```
+$ echo "help" | ./console.py
 (hbnb)
 
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb)
-
-~/me$ cat test_help
+(hbnb) 
+$
+$ cat test_help
 help
-~/me$ cat test_help | ./console.py
+$
+$ cat test_help | ./console.py
 (hbnb)
 
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb)
-~/me$
-Bugs
-At this time, there are no known bugs.
+(hbnb) 
+$
+```
 
-License
-AirBnB Clone is open source and free to download and use
+## Format of Command Input
+
+In order to give commands to the console, these will need to be piped through an echo in case of  **Non-interactive mode**.
+
+In  **Interactive Mode**  the commands will need to be written with a keyboard when the prompt appears and will be recognized when an enter key is pressed (new line). As soon as this happens, the console will attempt to execute the command through several means or will show an error message if the command didn't run successfully. In this mode, the console can be exited using the **CTRL + D** combination,  **CTRL + C**, or the command **quit** or **EOF**.
+
+## Arguments
+
+Most commands have several options or arguments that can be used when executing the program. In order for the Shell to recognize those parameters, the user must separate everything with spaces.
+
+Example:
+
+```
+
+user@ubuntu:~/AirBnB$ ./console.py
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+user@ubuntu:~/AirBnB$ ./console.py
+
+```
+
+or
+
+```
+user@ubuntu:~/AirBnB$ ./console.py $ echo "create BaseModel" | ./console.py
+(hbnb)
+e37ebcd3-f8e1-4c1f-8095-7a019070b1fa
+(hbnb)
+user@ubuntu:~/AirBnB$ ./console.py
+```
+
+## Available commands and what they do
+
+The recognizable commands by the interpreter are the following:
+
+|Command| Description |
+|--|--|
+| **quit or EOF** | Exits the program |
+| **Usage** | By itself |
+| **-----** | **-----** |
+| **help** | Provides a text describing how to use a command.  |
+| **Usage** | By itself --or-- **help <command\>** |
+| **-----** | **-----** |
+| **create** | Creates a new instance of a valid `Class`, saves it (to the JSON file) and prints the `id`.  Valid classes are: BaseModel, User, State, City, Amenity, Place, Review. |
+| **Usage** | **create <class name\>**|
+| **-----** | **-----** |
+| **show** | Prints the string representation of an instance based on the class name and `id`  |
+| **Usage** | **show <class name\> <id\>** --or-- **<class name\>.show(<id\>)**|
+| **-----** | **-----** |
+| **destroy** | Deletes an instance based on the class name and `id` (saves the change into a JSON file).  |
+| **Usage** | **destroy <class name\> <id\>** --or-- **<class name>.destroy(<id>)** |
+| **-----** | **-----** |
+| **all** | Prints all string representation of all instances based or not on the class name.  |
+| **Usage** | By itself or **all <class name\>** --or-- **<class name\>.all()** |
+| **-----** | **-----** |
+| **update** | Updates an instance based on the class name and `id` by adding or updating attribute (saves the changes into a JSON file).  |
+| **Usage** | **update <class name\> <id\> <attribute name\> "<attribute value\>"** ---or--- **<class name\>.update(<id\>, <attribute name\>, <attribute value\>)** --or-- **<class name\>.update(<id\>, <dictionary representation\>)**|
+| **-----** | **-----** |
+| **count** | Retrieve the number of instances of a class.  |
+| **Usage** | **<class name\>.count()** |
+
+## Authors
+
+Ibe Pascal | Email: [ArchLight19](mailto:pascalibe2014@gmail.com) 
+
+Anthony Etim | Github: [otoobongekim](mailto:otoobongekim@gmail.com)
