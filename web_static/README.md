@@ -1,1 +1,1 @@
-Just mastering comments on github
+Just mastering comments on github from a particular youtube video
